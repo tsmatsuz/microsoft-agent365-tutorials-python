@@ -1,0 +1,65 @@
+version: "0.1.1"
+tenantId: {tenant-id(guid)}
+bot:
+  id: {agent-user-id}@{domain-name}.onmicrosoft.com
+  name: {agent-user-name}
+  role: agenticUser
+  tenantId: {tenant-id}
+  agenticUserId: {agent-user-object-id}
+  agenticAppId: {agent-identity-app-id}
+currentUser:
+  id: user-id-0
+  name: {your-entra-user-name}
+  userPrincipleName: {your-entra-user-id}@{domain-name}.onmicrosoft.com
+  aadObjectId: {your-entra-user-object-id}
+  givenName: {your-entra-user-given-name}
+  surname: {your-entra-user-surname}
+  email: {your-entra-user-id}@{domain-name}.onmicrosoft.com
+users:
+  - id: user-id-1
+    name: Taro Dummy
+    userPrincipleName: dummy01@{domain-name}.onmicrosoft.com
+    aadObjectId: 522f80aa-963d-4b71-bba9-000000000001
+    givenName: Taro
+    surname: Dummy
+    email: dummy01@{domain-name}.onmicrosoft.com
+  - id: user-id-2
+    name: Jiro Dummy
+    userPrincipleName: dummy02@{domain-name}.onmicrosoft.com
+    aadObjectId: 522f80aa-963d-4b71-bba9-000000000002
+    givenName: Jiro
+    surname: Dummy
+    email: dummy02@{domain-name}.onmicrosoft.com
+  - id: user-id-3
+    name: Saburo Dummy
+    userPrincipleName: dummy03@{domain-name}.onmicrosoft.com
+    aadObjectId: 522f80aa-963d-4b71-bba9-000000000003
+    givenName: Saburo
+    surname: Dummy
+    email: dummy03@{domain-name}.onmicrosoft.com
+  - id: user-id-4
+    name: Shiro Dummy
+    userPrincipleName: dummy04@{domain-name}.onmicrosoft.com
+    aadObjectId: 522f80aa-963d-4b71-bba9-000000000004
+    givenName: Shiro
+    surname: Dummy
+    email: dummy04@{domain-name}.onmicrosoft.com
+  - id: user-id-5
+    name: Goro Dummy
+    userPrincipleName: dummy05@{domain-name}.onmicrosoft.com
+    aadObjectId: 522f80aa-963d-4b71-bba9-000000000005
+    givenName: Goro
+    surname: Dummy
+    email: dummy05@{domain-name}.onmicrosoft.com
+personalChat:
+  id: personal-chat-id
+groupChat:
+  id: group-chat-id
+  name: Group Chat
+team:
+  id: team-id
+  name: My Team
+  aadGroupId: 00000000-0000-0000-0000-000000000031
+  channels:
+    - id: channel-announcements-id
+      name: Announcements

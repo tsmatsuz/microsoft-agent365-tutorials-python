@@ -1,0 +1,33 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+    "id": "{generate-and-set-guid-here}",
+    "name": {
+        "short": "Sample Echo Agent",
+        "full": "Sample Echo Agent"
+    },
+    "description":
+    {
+        "short": "Sample Echo Agent",
+        "full": "This is a primitive echo agent for test."
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#07687d",
+    "version": "1.0.0",
+    "manifestVersion": "devPreview",
+    "developer": {
+        "name": "Tsuyoshi Matsu",
+        "websiteUrl": "https://tsmatz.wordpress.com/",
+        "privacyUrl": "https://tsmatz.wordpress.com/",
+        "termsOfUseUrl": "https://tsmatz.wordpress.com/"
+    },
+    "agenticUserTemplates" :
+    [
+        {
+            "id": "{generate-and-set-guid-here}",
+            "file": "agenticUserTemplateManifest.json"
+        }
+    ]
+}
