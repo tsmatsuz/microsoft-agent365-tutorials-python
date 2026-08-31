@@ -11,8 +11,8 @@ Please prepare and install the following components:
 - Agent 365 (`a365` commands) CLI
 - Python
 
-Next **register an application in Entra ID**.<br>
-Please [refer](https://tsmatz.wordpress.com/2026/08/30/build-autopilot-agent-using-microsoft365-agents-sdk-and-agent365-sdk/) here for the procedure.
+And also **register an application in Entra ID** with permissions. Please refer [here](https://tsmatz.wordpress.com/2026/08/30/build-autopilot-agent-using-microsoft365-agents-sdk-and-agent365-sdk/) for details on how to register.<br>
+(This Entra ID application is used in the following settings.)
 
 ## Run code
 
@@ -21,7 +21,7 @@ Let's follow the steps below for code execution.
 
 > Note : I strongly recommend you to work in Python virtual environment.
 
-> Note : All these settings are experimented by using Agent 365 CLI (`a365`) version `1.1.214 (+90c444832f)`.
+> Note : All these settings are experimented by using Agent 365 CLI (`a365` commands) version `1.1.214 (+90c444832f)`.
 
 Clone this repository.
 
@@ -29,7 +29,7 @@ Clone this repository.
 git clone http://github.com/tsmatsuz/microsoft-agent365-tutorials-python.git
 ```
 
-Make blank directory and change your working directory.
+Make a blank directory as project directory, and change your working directory to it.
 
 ```
 mkdir your-test
@@ -37,16 +37,16 @@ cd your-test
 ```
 
 Run the following command.<br>
-During the wizard, :
-- log-in to your tenant as administrator 
-- set client id that you have added in prerequisites above
+During the wizard :
+- log-in to your tenant as Global administrator (otherwise, appropriate permissions must be needed)
+- set client id that you have registered in prerequisites above
 - set blank as Messaging endpoint URL
 
 ```cmd
 a365 setup all --aiteammate --agent-name {set-arbitrary-name}
 ```
 
-After setting, please copy client secret value for the generated blueprint.
+After the command execution is completed, please copy client secret value of the generated blueprint in the output console.
 
 Copy all files/folers in the repository into this folder.
 
@@ -62,7 +62,7 @@ By running the following command, compress the four files — `app.py`, `.env`, 
 Compress-Archive -Path "app.py", ".\.env", "requirements.txt", "startup.sh" -DestinationPath "deploy.zip"
 ```
 
-By running the following `az` commands, create Azure web app resource and deploy your Python package — `deploy.zip`. (Please change the following placeholders.)
+By running the following `az` commands, create Azure web app resource and deploy your Python package (`deploy.zip`) to it. (Please change the following placeholders.)
 
 ```cmd
 RESOURCE_GROUP={set-resource-group-name}
@@ -86,14 +86,14 @@ az webapp config set --name $WEB_APP --resource-group $RESOURCE_GROUP --startup-
 az webapp deploy --name $WEB_APP --resource-group $RESOURCE_GROUP --src-path deploy.zip
 ```
 
-By running the following command, configure the agent endpoint of the created Azure web app in your blueprint. (Please change the following placeholder.)
+By running the following command, set the messaging endpoint in the created Azure web app as your blueprint endpoint. (Please change the following placeholder.)
 
 ```cmd
 a365 setup blueprint --endpoint-only `
   --messaging-endpoint https://{your-webapp-name}.azurewebsites.net/api/messages
 ```
 
-Change all the placeholders in `manifest/manifest.json` file and `manifest/agenticUserTemplateManifest.json` file.<br>
+Change all the placeholders in `manifest/manifest.json` and `manifest/agenticUserTemplateManifest.json` files.<br>
 In modification, you should generate two new GUIDs and set these for `id` property.
 
 By running the following command, create the manifest package — `manifest.zip`.
@@ -102,12 +102,12 @@ By running the following command, create the manifest package — `manifest.zip`
 a365 publish
 ```
 
-Open Microsoft 365 Admin Center and go to `Agents – All agents`. Select `Add agent` and upload the generated `manifest.zip` file above.<br>
-After you have added (uploaded) your agent's manifest, also please activate this agent. (Select the agent and click `Activate`.) To activate your agent, you should assign the appropriate license — Microsoft Agent 365 license or Microsoft 365 Frontier for Autopilots license.
+Open Microsoft 365 Admin Center and go to "`Agents`" – "`All agents`". Select "`Add agent`" and upload the generated `manifest.zip` file above.<br>
+After you have added (uploaded) your agent's manifest, also please activate this agent. (Select the agent and click "`Activate`".) To activate your agent, you should assign the appropriate license — Microsoft Agent 365 license or Microsoft 365 Frontier for Autopilots license.
 
 ![Add and active agent](https://tsmatz.wordpress.com/wp-content/uploads/2026/08/20260827_published_agent.jpg)
 
-In Microsoft 365 Admin Center, select your generated agent, and click `Add - instance`.<br>
+In Microsoft 365 Admin Center, select your generated agent, and click "`Add`" - "`instance`".<br>
 In the wizard, set the alias for the instance, which is used as agent user's principal name — such as, "`{your-alias}@{your-domain}.onmicrosoft.com`".
 
 ![Create agent instance](https://tsmatz.wordpress.com/wp-content/uploads/2026/08/20260827_instance_setting.jpg)
