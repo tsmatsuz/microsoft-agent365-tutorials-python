@@ -5,8 +5,7 @@ In "[Basic](./01-minimal-example/)", you will learn the entire workflow using Ag
 
 - [Basic (Primitive Echo agent)](./01-minimal-example/)
 - Observability — coming soon
-- User’s On-Behalf-Of (OBO) / Agent user's impersonation — coming soon
-- Built-in MCP Tools — coming soon
+- Tools — coming soon
 - Notifications — coming soon
 
 The steps for running the code are described in each section of contents.
