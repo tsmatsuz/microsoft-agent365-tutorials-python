@@ -4,7 +4,7 @@ This workshop guides you through completing an Autopilot agent built with Python
 In "[Basic](./01-minimal-example/)", you will learn the entire workflow using Agent 365 CLI — from setting to publishing and consuming. In the subsequent contents, you will add features to this basic agent.
 
 - [Basic (Primitive Echo agent)](./01-minimal-example/)
-- Observability — coming soon
+- [Observability](./02-observability)
 - Tools — coming soon
 - Notifications — coming soon
 
