@@ -1,13 +1,14 @@
 # Observability
 
-The installation and setup procedures are the same as those described in "[Bsic](https://github.com/tsmatsuz/microsoft-agent365-tutorials-python/blob/master/01-minimal-example/Readme.md)" chapter.<br>
+Deploy an OpenAI model (such as, `gpt-5.2`, `gpt-5.4`, ...) on Microsoft Foundry, and set those environment varibales in `.env` file.
 
+The subsequent installation and setup procedures are the same as those described in "[Basic](https://github.com/tsmatsuz/microsoft-agent365-tutorials-python/blob/master/01-minimal-example/Readme.md)" chapter.<br>
 If you have already set up, run the following commands to recreate the deployment asset (`deploy.zip`) and upload it again.
 
 ```cmd
-# create deploy.zip
+# create deploy.zip with new assets
 Compress-Archive -Path "app.py", ".\.env", "requirements.txt", "startup.sh" -DestinationPath "deploy.zip"
-# deploy (upload) the asset
+# deploy again (upload and run deployment script)
 az webapp deploy --name $WEB_APP --resource-group $RESOURCE_GROUP --src-path deploy.zip
 ```
 
