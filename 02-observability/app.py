@@ -19,7 +19,6 @@ from aiohttp.web import Application, Request, Response, run_app
 # added for Microsoft Agent Framework (MAF)
 from agent_framework import Agent
 from agent_framework.openai import OpenAIChatClient
-from azure.core.credentials import AzureKeyCredential
 # added for observability
 from microsoft.opentelemetry import use_microsoft_opentelemetry
 from microsoft.opentelemetry.a365.hosting.token_cache_helpers import (
