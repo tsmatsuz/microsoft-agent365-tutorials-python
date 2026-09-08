@@ -20,7 +20,7 @@ Open Microsoft Defender (https://security.microsoft.com/).
 
 Go to "`System`" – "`Settings`" – "`Security for AI`" in navigation, and make sure that "`Agent 365`" and "`Microsoft 365 Connector`" are connected.
 
-Run the following query (KQL).
+Run the following query (KQL) in Microsoft Defender advanced hunting.
 
 ```
 let agentIdToFind = "YOUR-AGENT-APP-ID";
