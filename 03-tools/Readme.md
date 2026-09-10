@@ -1,6 +1,7 @@
 # Tools
 
-The subsequent installation and setup procedures are mostly the same as those described in "[Basic](https://github.com/tsmatsuz/microsoft-agent365-tutorials-python/blob/master/01-minimal-example/Readme.md)" chapter.<br>
+The installation and setup procedures are mostly the same as those described in "[Basic](https://github.com/tsmatsuz/microsoft-agent365-tutorials-python/blob/master/01-minimal-example/Readme.md)" chapter.
+
 Add the following two steps to the procedures described in "2. Create assets" section.
 
 ## 1. Deploy model
@@ -9,13 +10,13 @@ Deploy an OpenAI model (such as, `gpt-5.2`, `gpt-5.4`, ...) on Microsoft Foundry
 
 ## 2. Grant additional permissions
 
-Set Mail tool in `ToolingManifest.json` file. (The `ToolingManifest.json` file is created.)
+By running the following command, set Mail tool in `ToolingManifest.json` file. (The `ToolingManifest.json` file is created.)
 
 ```cmd
 a365 develop add-mcp-servers mcp_MailTools
 ```
 
-Grant tool's permissions to the blueprint.
+By running the following command, grant tool's permissions to the blueprint.
 
 ```cmd
 a365 setup permissions mcp
