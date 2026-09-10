@@ -1,0 +1,25 @@
+# Microsoft 365 Agents SDK
+microsoft-agents-hosting-aiohttp
+microsoft-agents-hosting-core
+microsoft-agents-authentication-msal
+microsoft-agents-activity
+
+# For Microsoft Agent Framework
+agent-framework
+
+# For tooling (chapter 3)
+microsoft_agents_a365_runtime
+microsoft_agents_a365_tooling
+microsoft_agents_a365_tooling_extensions_agentframework
+
+# Azure SDK components
+azure-identity
+
+# Core dependencies
+python-dotenv
+
+# HTTP server support
+aiohttp
+uvicorn[standard]
+gunicorn
+fastapi

@@ -1,0 +1,6 @@
+{
+    "id": "{set-same-guid-as-above-agenticUserTemplates-id}",
+    "schemaVersion": "0.1.0-preview",
+    "agentIdentityBlueprintId": "{your-blueprint-app-id}",
+    "communicationProtocol": "activityProtocol"
+}

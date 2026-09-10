@@ -5,7 +5,7 @@ In "[Basic](./01-minimal-example/)", you will learn the entire workflow using Ag
 
 - [Basic (Primitive Echo agent)](./01-minimal-example/)
 - [Observability](./02-observability)
-- Tools — coming soon
+- [Tools](./03-tools)
 - Notifications — coming soon
 
 The steps for running the code are described in each section of contents.
