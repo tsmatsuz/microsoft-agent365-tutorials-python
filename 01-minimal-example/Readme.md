@@ -1,6 +1,6 @@
 # Basic (Primitive Echo Agent)
 
-## Prerequisites
+## 1. Prerequisites
 
 Please prepare and install the following components:
 
@@ -14,7 +14,7 @@ Please prepare and install the following components:
 And also **register an application in Entra ID** with permissions. Please refer [here](https://tsmatz.wordpress.com/2026/08/30/build-autopilot-agent-using-microsoft365-agents-sdk-and-agent365-sdk/) for details on how to register.<br>
 (This Entra ID application is used in the following settings.)
 
-## Run code
+## 2. Create assets
 
 All commands should be run on PowerShell 7 or later. (You cannot use current stable version, PowerShell 5.)<br>
 Let's follow the steps below for code execution.
@@ -56,6 +56,8 @@ cp -r ../microsoft-agent365-tutorials-python/01-minimal-example/* .
 
 Change all the placeholders in `.env` file.
 
+## 3. Deploy
+
 By running the following command, compress the four files — `app.py`, `.env`, `requirements.txt`, and `startup.sh` — into `deploy.zip`.
 
 ```cmd
@@ -93,6 +95,8 @@ a365 setup blueprint --endpoint-only `
   --messaging-endpoint https://{your-webapp-name}.azurewebsites.net/api/messages
 ```
 
+## 4. Publish and create instance
+
 Change all the placeholders in `manifest/manifest.json` and `manifest/agenticUserTemplateManifest.json` files.<br>
 In modification, you should generate two new GUIDs and set these for `id` property.
 
@@ -112,7 +116,9 @@ In the wizard, set the alias for the instance, which is used as agent user's pri
 
 ![Create agent instance](https://tsmatz.wordpress.com/wp-content/uploads/2026/08/20260827_instance_setting.jpg)
 
-After you have added an agent instance, the agent will appear in your Microsoft Teams.<br>
+## 5. Consume agent
+
+After you have added an agent instance, the agent will appear in your Microsoft Teams. (If not, see activities in Teams. New agent instance arrival will be notified in activities.)<br>
 Now you can talk with this agent, as shown in the figure below.
 
 ![Consume agent](https://tsmatz.wordpress.com/wp-content/uploads/2026/08/20260827_autopilot_agent.jpg)
