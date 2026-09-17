@@ -7,11 +7,6 @@ microsoft-agents-activity
 # For Microsoft Agent Framework
 agent-framework
 
-# For tooling (chapter 3)
-microsoft_agents_a365_runtime
-microsoft_agents_a365_tooling
-microsoft_agents_a365_tooling_extensions_agentframework
-
 # Azure SDK components
 azure-identity
 
